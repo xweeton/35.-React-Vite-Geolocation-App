@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
 export default function App() {
-  const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
+  const [latitudeData, setLatitudeData] = useState(null);
+  const [longitudeData, setLongitudeData] = useState(null);
 
   useEffect(() => {
-    const success = (position) => { setLatitude(position.coords.latitude); setLongitude(position.coords.longitude); };
+    const success = (position) => { setLatitudeData(position.coords.latitude); setLongitudeData(position.coords.longitude); };
 
     const error = (error) => {
       console.error(error)
@@ -20,8 +20,8 @@ export default function App() {
     <>
       <img src="./src/geolocation.jpg" height='200px' />
       <h1>Geolocation App</h1>
-      <p>Latitude: {latitude}</p>
-      <p>Longitude: {longitude}</p>
+      <p>Latitude: {latitudeData}</p>
+      <p>Longitude: {longitudeData}</p>
     </>
   )
 }
