@@ -5,7 +5,10 @@ export default function App() {
   const [longitudeData, setLongitudeData] = useState(null);
 
   useEffect(() => {
-    const success = (position) => { setLatitudeData(position.coords.latitude); setLongitudeData(position.coords.longitude); };
+    const success = (position) => {
+      setLatitudeData(position.coords.latitude);
+      setLongitudeData(position.coords.longitude);
+    };
 
     const error = (error) => {
       console.error(error)
